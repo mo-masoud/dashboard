@@ -1,6 +1,12 @@
 <template>
-  <div class="h-screen bg-slate-100">
+  <div class="relative bg-slate-100">
     <LayoutsNavbar />
-    <slot />
+
+    <div class="flex">
+      <LayoutsSidebar />
+      <div class="min-h-screen">
+        <slot />
+      </div>
+    </div>
   </div>
 </template>

@@ -12,6 +12,7 @@
     "nuxt": "3.0.0-rc.10"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.2"
+    "@headlessui/vue": "^1.7.2",
+    "@pinia/nuxt": "^0.4.2"
   }
 }
