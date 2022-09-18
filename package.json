@@ -8,6 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.3.3",
     "nuxt": "3.0.0-rc.10"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.2"
   }
 }
