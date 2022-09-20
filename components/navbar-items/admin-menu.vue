@@ -6,7 +6,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
   <div class="relative">
     <Menu>
       <MenuButton
-        class="flex items-center gap-2 rounded-lg text-slate-700 hover:bg-slate-100 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-slate-600 px-2 md:px-4 py-1.5"
+        class="flex items-center gap-2 rounded-lg text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-slate-600 px-2 md:px-4 py-1.5"
       >
         <img
           src="https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?s=300"
@@ -28,17 +28,17 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
         </svg>
       </MenuButton>
       <MenuItems
-        class="absolute top-12 right-0 w-52 bg-white dark:bg-slate-800 rounded-lg shadow-lg border z-10 py-1"
+        class="absolute top-12 ltr:right-0 rtl:left-0 w-52 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"
       >
-        <MenuItem>
+        <MenuItem class="w-full">
           <button
-            class="flex items-center gap-2 w-full hover:bg-slate-100 dark:hover:bg-slate-600 dark:hover:text-white py-2 px-4"
+            class="flex items-center gap-2 text-slate-600 dark:text-slate-300 rounded text-sm font-light hover:bg-slate-100 dark:hover:bg-slate-700 dark:hover:text-slate-300 dark:active:text-slate-300 px-4 py-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              class="w-5 h-5 text-slate-600"
+              class="w-5 h-5"
             >
               <path
                 fill-rule="evenodd"
@@ -47,7 +47,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
               />
             </svg>
 
-            <span>Logout</span>
+            <span>{{ $t("logout") }}</span>
           </button>
         </MenuItem>
       </MenuItems>

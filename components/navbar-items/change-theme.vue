@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+import { useStore } from "~/stores/app";
+const store = useStore();
 </script>
 
 <template>
   <div class="relative">
     <Menu>
       <MenuButton
-        class="rounded focus-visible:ring focus-visible:ring-sky-200 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-gray-600 p-2"
+        class="rounded text-slate-800 dark:text-slate-200 focus-visible:ring focus-visible:ring-sky-200 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-gray-600 p-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,11 +26,12 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
         </svg>
       </MenuButton>
       <MenuItems
-        class="absolute top-12 right-0 bg-white dark:bg-slate-800 rounded-lg shadow-lg border z-10 py-1"
+        class="absolute top-12 w-36 ltr:left-0 rtl:right-0 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"
       >
         <MenuItem class="w-full">
           <button
-            class="flex items-center gap-2 text-slate-600 rounded text-sm font-light hover:bg-slate-100 px-4 py-2"
+            @click="store.changeColorMode('light')"
+            class="flex items-center gap-2 text-slate-600 dark:text-slate-300 rounded text-sm font-light hover:bg-slate-100 dark:hover:bg-slate-700 dark:hover:text-slate-300 dark:active:text-slate-300 px-4 py-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,32 +44,34 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
               />
             </svg>
 
-            <span>Light</span>
+            <span>{{ $t("light") }}</span>
           </button>
         </MenuItem>
         <MenuItem class="w-full">
           <button
-            class="flex items-center gap-2 text-slate-600 rounded text-sm font-light hover:bg-slate-100 px-4 py-2"
+            @click="store.changeColorMode('dark')"
+            class="flex items-center gap-2 text-slate-600 dark:text-slate-300 rounded text-sm font-light hover:bg-slate-100 dark:hover:bg-slate-700 dark:hover:text-slate-300 dark:active:text-slate-300 px-4 py-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+              viewBox="0 0 20 20"
               fill="currentColor"
-              class="w-5 h-5"
+              width="20"
+              height="20"
+              class="inline-block"
+              role="presentation"
             >
               <path
-                fill-rule="evenodd"
-                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                clip-rule="evenodd"
-              />
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
             </svg>
 
-            <span>Dark</span>
+            <span>{{ $t("dark") }}</span>
           </button>
         </MenuItem>
-        <MenuItem class="w-full">
+        <!-- <MenuItem class="w-full">
           <button
-            class="flex items-center gap-2 text-slate-600 rounded text-sm font-light hover:bg-slate-100 px-4 py-2"
+            class="flex items-center gap-2 text-slate-600 rounded text-sm font-light hover:bg-slate-100 dark:text-gray-500 dark:hover:text-gray-400 dark:active:text-gray-600 px-4 py-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +87,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
             </svg>
             <span>System</span>
           </button>
-        </MenuItem>
+        </MenuItem> -->
       </MenuItems>
     </Menu>
   </div>
