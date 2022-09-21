@@ -6,6 +6,7 @@ import IconBtn from "../elements/buttons/icon-btn.vue";
 import { useStore } from "~/stores/app";
 import Notifications from "../navbar-items/notifications.vue";
 import ChangeLang from "../navbar-items/change-lang.vue";
+import Search from "../navbar-items/search.vue";
 
 const store = useStore();
 </script>
@@ -14,7 +15,7 @@ const store = useStore();
   <header
     class="bg-white dark:bg-slate-800 flex items-center justify-between px-2 lg:px-4 py-2 w-full"
   >
-    <div class="flex items-center gap-8">
+    <div class="flex items-center lg:w-60 gap-8 md:gap-2">
       <Logo class="hidden md:block" />
       <IconBtn
         @click="store.openDrawer"
@@ -35,11 +36,13 @@ const store = useStore();
       </IconBtn>
     </div>
 
+    <Search class="lg:flex-1" />
+
     <div class="flex items-center gap-2">
       <ChangeLang />
-      <ChangeTheme />
+      <ChangeTheme class="hidden md:block" />
       <Notifications />
-      <AdminMenu />
+      <AdminMenu class="hidden md:block" />
     </div>
   </header>
 </template>

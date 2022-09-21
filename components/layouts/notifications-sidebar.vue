@@ -5,10 +5,10 @@ const store = useStore();
 </script>
 
 <template>
-  <div v-if="store.isRightDrawerOpen" class="flex lg:block">
+  <div v-if="store.isRightDrawerOpen" class="flex lg:block z-40">
     <div
       @click="store.closeRightDrawer"
-      class="lg:block absolute inset-0 bg-slate-600 dark:bg-slate-900 opacity-75"
+      class="block absolute inset-0 bg-slate-600 dark:bg-slate-900 opacity-75"
     ></div>
     <aside
       class="flex flex-col items-center absolute top-0 ltr:right-0 rtl:left-0 bg-slate-100 dark:bg-slate-800 w-80 h-screen p-4 py-12"

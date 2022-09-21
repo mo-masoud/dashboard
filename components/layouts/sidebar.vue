@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { useStore } from "~/stores/app";
+import AdminMenu from "../navbar-items/admin-menu.vue";
+import ChangeTheme from "../navbar-items/change-theme.vue";
 const store = useStore();
 </script>
 
 <template>
-  <div class="flex lg:block">
+  <div class="flex lg:block z-40 lg:z-0">
     <div
       class="lg:block absolute lg:relative inset-0 lg:w-60 bg-slate-600 lg:bg-inherit dark:bg-slate-900 opacity-75"
       :class="[!store.isDrawerOpen ? 'hidden' : 'block']"
@@ -12,7 +14,7 @@ const store = useStore();
     >
       <button
         @click="store.closeDrawer"
-        class="lg:hidden absolute left-60 ml-4 mt-4 text-white"
+        class="lg:hidden absolute ltr:left-60 ltr:ml-4 rtl:right-60 rtl:mr-4 mt-4 text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +31,7 @@ const store = useStore();
       </button>
     </div>
     <aside
-      class="flex lg:block flex-col absolute lg:relative top-0 bg-white dark:bg-slate-800 lg:bg-inherit dark:lg:bg-inherit w-60 h-screen pb-3"
+      class="flex lg:block flex-col absolute lg:relative top-0 bg-white dark:bg-slate-800 lg:bg-inherit dark:lg:bg-inherit w-60 h-[107.5vh]"
       :class="[!store.isDrawerOpen ? 'hidden' : 'block']"
     >
       <div
@@ -38,11 +40,11 @@ const store = useStore();
         <Logo />
       </div>
       <div
-        class="flex flex-col overflow-hidden lg:overflow-auto hover:overflow-auto space-y-4 pt-4 px-2"
+        class="relative flex flex-col overflow-hidden lg:overflow-auto hover:overflow-auto space-y-4 pt-4 px-2 pb-2"
       >
         <NuxtLink
           to="/"
-          class="flex items-center gap-2 font-light text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 active:text-sky-200 p-1.5 px-4 rounded"
+          class="flex items-center gap-2 font-light text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 active:text-sky-200 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-slate-600 p-1.5 px-4 rounded"
           activeClass="text-sky-500 dark:text-sky-500 font-bold"
           exactActiveClass="text-sky-500 dark:text-sky-500 font-bold"
         >
@@ -64,7 +66,7 @@ const store = useStore();
         </NuxtLink>
         <NuxtLink
           to="https://v3.nuxtjs.org/api/components/nuxt-link/"
-          class="flex items-center gap-2 font-light text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 active:text-sky-200 p-1.5 px-4 rounded"
+          class="flex items-center gap-2 font-light text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 active:text-sky-200 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-slate-600 p-1.5 px-4 rounded"
           activeClass="text-sky-500 dark:text-sky-500 font-bold"
           exactActiveClass="text-sky-500 dark:text-sky-500 font-bold"
         >
@@ -85,6 +87,11 @@ const store = useStore();
           </svg>
           <span>{{ $t("sections") }}</span>
         </NuxtLink>
+      </div>
+
+      <div class="relative block md:hidden w-full space-y-4 px-3 mt-4">
+        <ChangeTheme />
+        <AdminMenu />
       </div>
     </aside>
   </div>

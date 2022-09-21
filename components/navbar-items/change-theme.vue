@@ -8,7 +8,7 @@ const store = useStore();
   <div class="relative">
     <Menu>
       <MenuButton
-        class="rounded text-slate-800 dark:text-slate-200 focus-visible:ring focus-visible:ring-sky-200 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-gray-600 p-2"
+        class="flex items-center gap-2 rounded text-slate-800 dark:text-slate-200 focus-visible:ring focus-visible:ring-sky-200 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-gray-600 p-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,6 +24,9 @@ const store = useStore();
             d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
           />
         </svg>
+        <span class="block md:hidden text-slate-500 dark:text-slate-400">
+          {{ $t("change-theme") }}
+        </span>
       </MenuButton>
       <MenuItems
         class="absolute top-12 w-36 ltr:left-0 rtl:right-0 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"

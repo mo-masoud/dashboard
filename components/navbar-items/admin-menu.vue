@@ -3,17 +3,17 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative w-full">
     <Menu>
       <MenuButton
-        class="flex items-center gap-2 rounded-lg text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-slate-600 px-2 md:px-4 py-1.5"
+        class="flex items-center gap-2 rounded-lg text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 active:outline-none active:ring focus:outline-none focus:ring focus:ring-sky-200 dark:focus:ring-slate-600 px-2 md:px-4 py-1.5 w-full"
       >
         <img
           src="https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?s=300"
           alt="Avatar"
           class="w-8 h-8 rounded-full"
         />
-        <span class="hidden md:block text-sm">Admin</span>
+        <span class="text-sm">Admin</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -28,7 +28,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
         </svg>
       </MenuButton>
       <MenuItems
-        class="absolute top-12 ltr:right-0 rtl:left-0 w-52 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"
+        class="absolute top-12 ltr:right-0 rtl:left-0 w-full md:w-52 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"
       >
         <MenuItem class="w-full">
           <button

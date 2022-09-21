@@ -26,7 +26,7 @@ const store = useStore();
         </svg>
       </MenuButton>
       <MenuItems
-        class="absolute top-12 w-36 ltr:left-0 rtl:right-0 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"
+        class="absolute top-12 w-36 left-0 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-10 py-1"
       >
         <MenuItem class="w-full">
           <button
