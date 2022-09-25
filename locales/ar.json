@@ -8,5 +8,11 @@
   "home": "الرئيسية",
   "sections": "الأقسام",
   "search": "ابحث",
-  "change-theme": "تغير الواجهة"
+  "change-theme": "تغير الواجهة",
+  "welcome_back": "مرحبًا بعودتك!",
+  "email_address": "البريد الالكترونى",
+  "password": "كلمة المرور",
+  "remember_me": "تذكرنى",
+  "forgot_your_password": "نسيت كلمة المرور؟",
+  "login": "تسجيل الدخول"
 }

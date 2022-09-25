@@ -8,5 +8,11 @@
   "home": "Home",
   "sections": "Sections",
   "search": "Search",
-  "change-theme": "Change theme"
+  "change-theme": "Change theme",
+  "welcome_back": "Welcome Back!",
+  "email_address": "Email Address",
+  "password": "Password",
+  "remember_me": "Remember me",
+  "forgot_your_password": "Forgot your password?",
+  "login": "Log In"
 }

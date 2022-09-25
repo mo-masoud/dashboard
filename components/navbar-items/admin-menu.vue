@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+const handleLogout = () => {
+  const router = useRouter();
+  router.push("/auth");
+};
 </script>
 
 <template>
@@ -32,6 +36,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
       >
         <MenuItem class="w-full">
           <button
+            @click="handleLogout"
             class="flex items-center gap-2 text-slate-600 dark:text-slate-300 rounded text-sm font-light hover:bg-slate-100 dark:hover:bg-slate-700 dark:hover:text-slate-300 dark:active:text-slate-300 px-4 py-2"
           >
             <svg

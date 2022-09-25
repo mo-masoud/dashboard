@@ -1,5 +1,7 @@
 <template>
-  <div class="relative bg-slate-100 dark:bg-gray-900">
+  <div
+    class="relative bg-slate-100 dark:bg-slate-900 font-sans rtl:font-arabic"
+  >
     <LayoutsNavbar />
 
     <div class="flex">
