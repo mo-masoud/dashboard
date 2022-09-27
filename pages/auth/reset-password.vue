@@ -1,28 +1,37 @@
 <script setup lang="ts">
-import EmailField from "~/components/elements/fields/email-field.vue";
+import { useI18n } from "vue-i18n";
 import PasswordField from "~~/components/elements/fields/password-field.vue";
 import PrimaryBtn from "~~/components/elements/buttons/primary-btn.vue";
-import CheckboxField from "~~/components/elements/fields/checkbox-field.vue";
-import DefaultLink from "~~/components/elements/links/default-link.vue";
+import TextField from "~~/components/elements/fields/text-field.vue";
+
+const { t } = useI18n({});
 
 definePageMeta({
   layout: "auth",
 });
 
-const email = ref("");
+const code = ref("");
 const password = ref("");
-const rememberMe = ref(false);
+const passwordConfirmation = ref("");
 
-const emailError = ref<string>(null);
+const codeError = ref<string>(null);
 const passwordError = ref<string>(null);
+const passwordConfirmationError = ref<string>(null);
 
 const handleSubmit = (e: Event) => {
   e.preventDefault();
-  console.log(email.value);
+
+  if (password.value !== passwordConfirmation.value) {
+    passwordError.value = t("passwords_not_matched");
+    passwordConfirmationError.value = t("passwords_not_matched");
+    return;
+  }
+
+  console.log(code.value);
   console.log(password.value);
-  console.log(rememberMe.value);
+  console.log(passwordConfirmation.value);
   const router = useRouter();
-  router.push("/");
+  router.push("/auth");
 };
 </script>
 
@@ -31,7 +40,7 @@ const handleSubmit = (e: Event) => {
     <h1
       class="text-2xl text-center font-thin mb-6 text-gray-500 dark:text-gray-400"
     >
-      {{ $t("welcome_back") }}
+      {{ $t("reset_password") }}
     </h1>
     <svg
       class="block mx-auto mb-6"
@@ -44,15 +53,9 @@ const handleSubmit = (e: Event) => {
     </svg>
     <div class="mb-6">
       <label for="email" class="text-slate-400 text-sm block mb-2">
-        {{ $t("email_address") }}
+        {{ $t("code") }}
       </label>
-      <EmailField
-        v-model="email"
-        :error="emailError"
-        required
-        id="email"
-        placeholder=""
-      />
+      <TextField v-model="code" :error="codeError" required id="code" />
     </div>
     <div class="mb-6">
       <label for="password" class="text-slate-400 text-sm block mb-2">
@@ -66,19 +69,23 @@ const handleSubmit = (e: Event) => {
         placeholder=""
       />
     </div>
-    <div class="flex items-center justify-between mb-6">
-      <CheckboxField
-        id="remember-me"
-        name="remember_me"
-        :label="$t('remember_me')"
-        v-model="rememberMe"
-      />
 
-      <DefaultLink to="/auth/forgot-password">
-        {{ $t("forgot_your_password") }}
-      </DefaultLink>
+    <div class="mb-6">
+      <label for="password" class="text-slate-400 text-sm block mb-2">
+        {{ $t("password_confirmation") }}
+      </label>
+      <PasswordField
+        v-model="passwordConfirmation"
+        :error="passwordConfirmationError"
+        required
+        id="password-confirmation"
+        placeholder=""
+        name="password_confirmation"
+      />
     </div>
 
-    <PrimaryBtn type="submit" class="w-full">{{ $t("login") }}</PrimaryBtn>
+    <PrimaryBtn type="submit" class="w-full capitalize">{{
+      $t("reset_password")
+    }}</PrimaryBtn>
   </form>
 </template>

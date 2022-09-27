@@ -14,5 +14,9 @@
   "password": "كلمة المرور",
   "remember_me": "تذكرنى",
   "forgot_your_password": "نسيت كلمة المرور؟",
-  "login": "تسجيل الدخول"
+  "login": "تسجيل الدخول",
+  "send_password_reset_code": "إرسال رمز إعادة تعيين كلمة المرور",
+  "reset_password": "إعادة تعيين كلمة المرور",
+  "code": "رمز",
+  "passwords_not_matched": "كلمات المرور غير متطابقة"
 }

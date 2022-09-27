@@ -49,6 +49,36 @@ export const useStore = defineStore("app", () => {
     if (reload) location.reload();
   };
 
+  type NotifyType = "success" | "error" | "alert";
+
+  interface NotifyInterface {
+    message: string;
+    type: NotifyType;
+  }
+
+  const notify = ref<NotifyInterface | null>();
+  const isWaitForNotify = ref(false);
+
+  const setIsWaitForNotify = (wait: boolean) => {
+    isWaitForNotify.value = wait;
+
+    if (!wait) {
+      setTimeout(() => {
+        notify.value = null;
+      }, 1000);
+    }
+  };
+
+  const setNotify = (notification: NotifyInterface) => {
+    notify.value = notification;
+
+    if (!isWaitForNotify.value) {
+      setTimeout(() => {
+        notify.value = null;
+      }, 2000);
+    }
+  };
+
   return {
     isDrawerOpen,
     openDrawer,
@@ -60,5 +90,8 @@ export const useStore = defineStore("app", () => {
     closeRightDrawer,
     lang,
     changeLang,
+    notify,
+    setNotify,
+    setIsWaitForNotify,
   };
 });

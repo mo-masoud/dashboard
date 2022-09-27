@@ -11,7 +11,7 @@ const { type } = withDefaults(defineProps<Props>(), {
 <template>
   <button
     :type="type"
-    class="shadow relative bg-sky-500 hover:bg-sky-400 text-white dark:text-slate-900 cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-sky-200 dark:ring-slate-600 inline-flex items-center justify-center h-9 px-3"
+    class="cursor-pointer text-sm font-bold focus:outline-none text-slate-400 hover:text-slate-300 inline-flex items-center justify-center h-9 px-3"
   >
     <slot />
   </button>
