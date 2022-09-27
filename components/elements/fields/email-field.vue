@@ -14,10 +14,10 @@ const { id, name, placeholder, required, modelValue, error } =
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="flex flex-col md:flex-row items-center">
     <label
       v-if="label"
-      class="text-sm font-bold md:font-normal px-6 md:px-8 mt-2 md:mt-0 w-full md:w-1/5 md:py-5"
+      class="text-sm font-light md:font-normal px-6 md:px-8 mt-2 md:mt-0 w-full md:w-1/5 md:py-5"
     >
       {{ label }}<span v-if="required" class="text-red-500"> *</span>
     </label>

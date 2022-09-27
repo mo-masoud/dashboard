@@ -6,7 +6,7 @@
 
     <div class="flex">
       <LayoutsSidebar />
-      <div class="min-h-screen flex-1 p-10">
+      <div class="min-h-screen flex-1 p-4 md:p-10">
         <NuxtPage />
         <div class="text-center mt-8 text-xs text-slate-400 space-y-2">
           <p>

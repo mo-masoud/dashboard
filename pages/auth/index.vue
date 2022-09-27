@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import EmailField from "~/components/elements/fields/email-field.vue";
-import PasswordField from "~~/components/elements/fields/password-field.vue";
-import PrimaryBtn from "~~/components/elements/buttons/primary-btn.vue";
-import CheckboxField from "~~/components/elements/fields/checkbox-field.vue";
-import DefaultLink from "~~/components/elements/links/default-link.vue";
+import PasswordField from "~/components/elements/fields/password-field.vue";
+import PrimaryBtn from "~/components/elements/buttons/primary-btn.vue";
+import CheckboxField from "~/components/elements/fields/checkbox-field.vue";
+import DefaultLink from "~/components/elements/links/default-link.vue";
 
 definePageMeta({
   layout: "auth",

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import EmailField from "~/components/elements/fields/email-field.vue";
-import PrimaryBtn from "~~/components/elements/buttons/primary-btn.vue";
+import PrimaryBtn from "~/components/elements/buttons/primary-btn.vue";
 definePageMeta({
   layout: "auth",
 });

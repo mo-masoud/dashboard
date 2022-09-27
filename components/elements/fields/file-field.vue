@@ -52,9 +52,9 @@ const selectFile = (e: Event) => {
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex flex-col md:flex-row items-center">
     <label
-      class="text-sm font-bold md:font-normal px-6 md:px-8 mt-2 md:mt-0 w-full md:w-1/5 md:py-5"
+      class="text-sm font-light md:font-normal px-6 md:px-8 mt-2 md:mt-0 w-full md:w-1/5 md:py-5"
     >
       {{ label }}<span v-if="required" class="text-red-500"> *</span>
     </label>
@@ -62,7 +62,7 @@ const selectFile = (e: Event) => {
       <div class="flex item-center gap-2">
         <input
           ref="file"
-          class="w-0"
+          class="w-0 h-0"
           type="file"
           :name="name"
           :id="id"
@@ -72,12 +72,12 @@ const selectFile = (e: Event) => {
           @change="selectFile"
         />
         <OutlinePrimaryBtn @click="choseFile">{{ btnText }}</OutlinePrimaryBtn>
-        <span
+        <div
           v-if="filename"
           class="flex items-center select-none text-sm text-slate-400"
         >
           {{ filename }}
-        </span>
+        </div>
       </div>
     </div>
   </div>

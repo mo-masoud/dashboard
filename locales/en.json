@@ -21,6 +21,7 @@
   "code": "Code",
   "passwords_not_matched": "Passwords are not matched",
   "profile": "Profile",
+  "admin_details": "Admin details",
   "edit_profile": "Edit profile",
   "view": "View",
   "delete_resource": "Delete resource",
@@ -33,5 +34,9 @@
   "admin": "Admin",
   "updated_successfully": "Updated successfully",
   "less_then": "less then",
-  "characters": "characters"
+  "characters": "characters",
+  "id": "ID",
+  "name": "Name",
+  "email": "Email",
+  "avatar": "Avatar"
 }

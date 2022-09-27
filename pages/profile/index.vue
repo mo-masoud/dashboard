@@ -1,26 +1,30 @@
 <script setup lang="ts">
-import View from "~~/components/ui/view.vue";
-import { ViewAttribute, ViewTypes } from "~~/types/ViewAttribute";
+import { useI18n } from "vue-i18n";
+
+import View from "~/components/ui/view.vue";
+import { ViewAttribute, ViewTypes } from "~/types/ViewAttribute";
+
+const { t } = useI18n({});
 
 const attributes: ViewAttribute[] = [
   {
-    label: "ID",
+    label: t("id"),
     type: ViewTypes.ID,
     value: 1,
   },
   {
-    label: "Avatar",
+    label: t("avatar"),
     type: ViewTypes.IMAGE,
     value:
       "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?s=300",
   },
   {
-    label: "Name",
+    label: t("name"),
     type: ViewTypes.STRING,
     value: "Admin",
   },
   {
-    label: "Email",
+    label: t("email"),
     type: ViewTypes.EMAIL,
     value: "admin@admin.com",
   },
@@ -29,7 +33,7 @@ const attributes: ViewAttribute[] = [
 <template>
   <div>
     <View
-      title="User details: Admin"
+      :title="`${$t('admin_details')}: Admin`"
       edit-path="/profile/update"
       :attributes="attributes"
     />

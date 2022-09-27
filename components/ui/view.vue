@@ -8,7 +8,7 @@ import {
   TransitionChild,
 } from "@headlessui/vue";
 
-import { ViewAttribute } from "~~/types/ViewAttribute";
+import { ViewAttribute } from "~/types/ViewAttribute";
 import IconBtn from "../elements/buttons/icon-btn.vue";
 import Card from "../elements/cards/card.vue";
 import DangerBtn from "../elements/buttons/danger-btn.vue";
@@ -91,8 +91,10 @@ const openDel = ref(false);
       </Dialog>
     </TransitionRoot>
 
-    <div class="flex items-center justify-between">
-      <h2 class="text-slate-500 font-normal text-xl md:text-2xl">
+    <div class="flex flex-col md:flex-row md:items-center justify-between">
+      <h2
+        class="text-slate-500 dark:text-slate-400 font-light text-xl md:text-2xl capitalize"
+      >
         {{ title || $t("view") }}
       </h2>
       <div class="flex items-center gap-1">
@@ -104,7 +106,7 @@ const openDel = ref(false);
               viewBox="0 0 24 24"
               stroke-width="1.7"
               stroke="currentColor"
-              class="w-6 h-6 text-slate-500"
+              class="w-6 h-6 text-slate-500 dark:text-slate-400"
             >
               <path
                 stroke-linecap="round"
@@ -121,7 +123,7 @@ const openDel = ref(false);
             viewBox="0 0 24 24"
             stroke-width="1.7"
             stroke="currentColor"
-            class="w-6 h-6 text-slate-500"
+            class="w-6 h-6 text-slate-500 dark:text-slate-400"
           >
             <path
               stroke-linecap="round"
@@ -133,8 +135,14 @@ const openDel = ref(false);
       </div>
     </div>
     <Card class="mt-2">
-      <div class="divide-y divide-slate-100 text-slate-500">
-        <div v-for="(attr, i) in attributes" :key="i" class="flex py-4 px-8">
+      <div
+        class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-500 dark:text-slate-400"
+      >
+        <div
+          v-for="(attr, i) in attributes"
+          :key="i"
+          class="flex flex-col md:flex-row gap-1 md:gap-0 py-2 md:py-4 px-6 md:px-8"
+        >
           <h4 class="text-sm font-bold md:font-normal w-1/4">
             {{ attr.label }}
           </h4>

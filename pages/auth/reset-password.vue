@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import PasswordField from "~~/components/elements/fields/password-field.vue";
-import PrimaryBtn from "~~/components/elements/buttons/primary-btn.vue";
-import TextField from "~~/components/elements/fields/text-field.vue";
+import PasswordField from "~/components/elements/fields/password-field.vue";
+import PrimaryBtn from "~/components/elements/buttons/primary-btn.vue";
+import TextField from "~/components/elements/fields/text-field.vue";
 
 const { t } = useI18n({});
 

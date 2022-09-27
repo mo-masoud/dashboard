@@ -75,47 +75,56 @@ const updatePassword = (e: Event) => {
 </script>
 <template>
   <div>
-    <h2 class="text-slate-500 font-normal text-xl md:text-2xl">
+    <h2
+      class="text-slate-500 dark:text-slate-400 font-normal text-xl md:text-2xl"
+    >
       {{ $t("update") }} {{ $t("admin") }}: Admin
     </h2>
     <form @submit="updateData" class="mt-2">
       <Card>
-        <div class="divide-y divide-slate-100 text-slate-500">
+        <div
+          class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-500 dark:text-slate-400 py-2 md:py-0"
+        >
           <TextField
             v-model="name"
             required
             id="name"
-            placeholder="Name"
-            label="Name"
+            :placeholder="$t('name')"
+            :label="$t('name')"
           />
           <EmailField
             v-model="email"
             required
             id="email"
-            placeholder="Email"
-            label="Email"
+            :placeholder="$t('email')"
+            :label="$t('email')"
           />
           <FileField v-model="avatar" label="Avatar" id="avatar" name="file" />
         </div>
       </Card>
 
-      <div class="flex items-center justify-end mt-8">
-        <PrimaryBtn type="submit">
+      <div class="flex items-center md:justify-end mt-8">
+        <PrimaryBtn type="submit" class="w-full md:w-fit">
           {{ $t("update") }} {{ $t("admin") }}
         </PrimaryBtn>
       </div>
     </form>
 
-    <h2 class="text-slate-500 font-normal text-xl md:text-2xl capitalize">
+    <h2
+      class="text-slate-500 dark:text-slate-400 font-normal text-xl md:text-2xl capitalize mt-12 md:mt-0"
+    >
       {{ $t("update_password") }}
     </h2>
     <form @submit="updatePassword" class="mt-2">
       <Card>
-        <div class="divide-y divide-slate-100 text-slate-500">
+        <div
+          class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-500 dark:text-slate-400 py-2 md:py-0"
+        >
           <PasswordField
             :error="oldPasswordErr"
             v-model="oldPassword"
             id="old-password"
+            required
             name="old_password"
             :placeholder="$t('old_password')"
             :label="$t('old_password')"
@@ -124,6 +133,7 @@ const updatePassword = (e: Event) => {
             :error="newPasswordErr"
             v-model="newPassword"
             id="new-password"
+            required
             name="new_password"
             :placeholder="$t('new_password')"
             :label="$t('new_password')"
@@ -132,6 +142,7 @@ const updatePassword = (e: Event) => {
             :error="passwordConfirmationErr"
             v-model="passwordConfirmation"
             id="password-confirmation"
+            required
             name="password_confirmation"
             :placeholder="$t('password_confirmation')"
             :label="$t('password_confirmation')"
@@ -139,8 +150,8 @@ const updatePassword = (e: Event) => {
         </div>
       </Card>
 
-      <div class="flex items-center justify-end mt-8">
-        <PrimaryBtn type="submit">
+      <div class="flex items-center md:justify-end mt-8">
+        <PrimaryBtn type="submit" class="w-full md:w-fit">
           {{ $t("update") }} {{ $t("password") }}
         </PrimaryBtn>
       </div>
