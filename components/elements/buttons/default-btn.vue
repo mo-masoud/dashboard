@@ -1,9 +1,11 @@
 <script setup lang="ts">
 interface Props {
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  small?: boolean;
 }
 
-const { type } = withDefaults(defineProps<Props>(), {
+const { type, disabled } = withDefaults(defineProps<Props>(), {
   type: "button",
 });
 </script>
@@ -11,7 +13,14 @@ const { type } = withDefaults(defineProps<Props>(), {
 <template>
   <button
     :type="type"
-    class="cursor-pointer text-sm font-bold focus:outline-none text-slate-400 hover:text-slate-300 inline-flex items-center justify-center h-9 px-3"
+    :disabled="disabled"
+    class="font-bold focus:outline-none hover:text-slate-300 inline-flex items-center justify-center h-9 px-3"
+    :class="[
+      disabled
+        ? 'cursor-not-allowed text-slate-300'
+        : 'cursor-pointer text-slate-400',
+      small ? 'text-xs' : 'text-sm',
+    ]"
   >
     <slot />
   </button>

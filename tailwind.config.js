@@ -10,6 +10,9 @@ module.exports = {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans],
         arabic: ["Cairo", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        xxs: "11px",
+      },
     },
   },
   plugins: [

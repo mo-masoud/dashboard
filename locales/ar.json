@@ -38,5 +38,8 @@
   "name": "الاسم",
   "email": "البريد",
   "avatar": "الصورة",
-  "password_confirmation": "تاكيد كلمة المرور"
+  "password_confirmation": "تاكيد كلمة المرور",
+  "admins": "المسؤولين",
+  "create": "اضافة",
+  "per_page": "لكل صفحة"
 }

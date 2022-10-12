@@ -38,5 +38,10 @@
   "id": "ID",
   "name": "Name",
   "email": "Email",
-  "avatar": "Avatar"
+  "avatar": "Avatar",
+  "admins": "Admins",
+  "create": "Create",
+  "per_page": "Per page",
+  "previous": "Previous",
+  "next": "Next"
 }
